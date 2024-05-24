@@ -37,9 +37,9 @@ namespace DAL
             }
             return dscthd;
         }
-        public void ThemCTHD(ChiTietHoaDon ct)
+        public void ThemCTHD(int mahd, int mamon, int sl)
         {
-            DataProvider.Instance.ExecuteNonQuery("SP_ThemCTHD @mahd , @mamon , @sl ", new object[] { ct.MaHd, ct.MaMon, ct.Sl });
+            DataProvider.Instance.ExecuteNonQuery("SP_ThemCTHD @mahd , @mamon , @sl ", new object[] { mahd, mamon, sl});
         }
     }
 }

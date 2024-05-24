@@ -23,6 +23,7 @@ namespace DTO
             this.Sl = (int)row["soluong"];
         }
 
+        public ChiTietHoaDon() { }
         private int maHd;
         private int maMon;
         private int sl;

@@ -37,7 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dmSl = new System.Windows.Forms.DomainUpDown();
             this.cbLoai = new System.Windows.Forms.ComboBox();
             this.cbMon = new System.Windows.Forms.ComboBox();
             this.btnOrder = new System.Windows.Forms.Button();
@@ -45,6 +44,8 @@
             this.txtNhanvien = new System.Windows.Forms.TextBox();
             this.txtBan = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.numSl = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numSl)).BeginInit();
             this.SuspendLayout();
             // 
             // flpBan
@@ -96,7 +97,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(544, 38);
+            this.label1.Location = new System.Drawing.Point(541, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 20;
@@ -106,7 +107,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(544, 67);
+            this.label2.Location = new System.Drawing.Point(541, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 16);
             this.label2.TabIndex = 21;
@@ -121,15 +122,6 @@
             this.label3.Size = new System.Drawing.Size(60, 16);
             this.label3.TabIndex = 22;
             this.label3.Text = "Số lượng";
-            // 
-            // dmSl
-            // 
-            this.dmSl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dmSl.Location = new System.Drawing.Point(622, 94);
-            this.dmSl.Name = "dmSl";
-            this.dmSl.Size = new System.Drawing.Size(47, 22);
-            this.dmSl.TabIndex = 23;
-            this.dmSl.Text = "1";
             // 
             // cbLoai
             // 
@@ -186,7 +178,7 @@
             this.txtBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBan.Location = new System.Drawing.Point(622, 122);
             this.txtBan.Name = "txtBan";
-            this.txtBan.Size = new System.Drawing.Size(106, 22);
+            this.txtBan.Size = new System.Drawing.Size(69, 22);
             this.txtBan.TabIndex = 30;
             // 
             // label5
@@ -199,10 +191,29 @@
             this.label5.TabIndex = 29;
             this.label5.Text = "Bàn";
             // 
+            // numSl
+            // 
+            this.numSl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numSl.Location = new System.Drawing.Point(622, 94);
+            this.numSl.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.numSl.Name = "numSl";
+            this.numSl.Size = new System.Drawing.Size(40, 22);
+            this.numSl.TabIndex = 31;
+            this.numSl.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // ucOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.numSl);
             this.Controls.Add(this.txtBan);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNhanvien);
@@ -210,7 +221,6 @@
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.cbMon);
             this.Controls.Add(this.cbLoai);
-            this.Controls.Add(this.dmSl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -218,6 +228,7 @@
             this.Controls.Add(this.flpBan);
             this.Name = "ucOrder";
             this.Size = new System.Drawing.Size(982, 537);
+            ((System.ComponentModel.ISupportInitialize)(this.numSl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +241,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DomainUpDown dmSl;
         private System.Windows.Forms.ComboBox cbLoai;
         private System.Windows.Forms.ComboBox cbMon;
         private System.Windows.Forms.Button btnOrder;
@@ -242,5 +252,6 @@
         private System.Windows.Forms.TextBox txtNhanvien;
         private System.Windows.Forms.TextBox txtBan;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numSl;
     }
 }

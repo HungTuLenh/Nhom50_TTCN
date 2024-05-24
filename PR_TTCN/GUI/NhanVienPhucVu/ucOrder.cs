@@ -14,7 +14,9 @@ namespace GUI.NhanVienPhucVu
 {
     public partial class ucOrder : UserControl
     {
+        ChiTietHoaDon ct = new ChiTietHoaDon();
         HoaDon hd = new HoaDon();
+
         private static ucOrder instance;
         public static ucOrder Instance
         {
@@ -92,6 +94,7 @@ namespace GUI.NhanVienPhucVu
 
                 lvOrder.Items.Add(lvi);
             }
+            LoadBan();
         }
 
         private void btn_Click(object sender, EventArgs e)
@@ -121,8 +124,25 @@ namespace GUI.NhanVienPhucVu
         private void btnOrder_Click(object sender, EventArgs e)
         {
             BanAn ban = lvOrder.Tag as BanAn;
+            hd.MaBan = txtBan.Text;
+            hd.MaNV = txtNhanvien.Text;
+            ct.MaHd = HoaDonDAL.Instance.LayHoaDonChuaThanhToan(hd.MaBan);
+            ct.MaMon = (cbMon.SelectedItem as MonAn).MaMon;
+            ct.Sl = (int)numSl.Value;
+            
+            
 
-
+            if(ct.MaHd == -1)
+            {
+                HoaDonDAL.Instance.ThemHD(hd);
+                ChiTietHoaDonDAL.Instance.ThemCTHD(HoaDonDAL.Instance.LayMaHDMax(), ct.MaMon, ct.Sl);
+            }
+            else
+            {
+                ChiTietHoaDonDAL.Instance.ThemCTHD(ct.MaHd, ct.MaMon, ct.Sl);
+            }
+            ShowOrder(hd.MaBan);
         }
+
     }
 }

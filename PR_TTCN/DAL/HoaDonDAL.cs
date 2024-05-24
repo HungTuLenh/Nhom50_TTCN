@@ -28,7 +28,7 @@ namespace DAL
 
         public int LayHoaDonChuaThanhToan(string maban) 
         {
-            DataTable dt = DataProvider.Instance.ExecuteQuery("SELECT * from tblhoadonthanhtoan where maban = " + maban + " AND trang thai = 0");
+            DataTable dt = DataProvider.Instance.ExecuteQuery("SELECT * from tblhoadonthanhtoan where maban = '" + maban + "' AND trangthai = 0");
             if( dt.Rows.Count > 0 )
             {
                 HoaDon hd = new HoaDon(dt.Rows[0]);
@@ -38,8 +38,19 @@ namespace DAL
         }
         public void ThemHD(HoaDon hd)
         {
-            DataProvider.Instance.ExecuteNonQuery("SP_ThemHD @maban , @manv , N'@pttt'", new object[] { hd.MaHd, hd.MaNV, hd.PtThantoan});
+            DataProvider.Instance.ExecuteNonQuery("SP_ThemHD @maban , @manv", new object[] { hd.MaBan, hd.MaNV});
         }
         
+        public int LayMaHDMax()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(mahd) from tblhoadonthanhtoan");
+            }
+            catch
+            {
+                return 1;
+            }
+        }
     }
 }
