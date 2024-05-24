@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DFE16C8-741E-4EF9-ADAE-E43FD4337F6D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienBep\frmNhanVienBep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienBep\frmNhanVienBep.Designer.cs">
+      <DependentUpon>frmNhanVienBep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienPhucVu\frmNhanVienPhucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienPhucVu\frmNhanVienPhucVu.Designer.cs">
+      <DependentUpon>frmNhanVienPhucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienPhucVu\ucDatBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NhanVienPhucVu\ucDatBan.Designer.cs">
+      <DependentUpon>ucDatBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienPhucVu\ucOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NhanVienPhucVu\ucOrder.Designer.cs">
+      <DependentUpon>ucOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienThuNgan\frmNhanVienThuNgan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienThuNgan\frmNhanVienThuNgan.Designer.cs">
+      <DependentUpon>frmNhanVienThuNgan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienBep\frmNhanVienBep.resx">
+      <DependentUpon>frmNhanVienBep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienPhucVu\frmNhanVienPhucVu.resx">
+      <DependentUpon>frmNhanVienPhucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienPhucVu\ucDatBan.resx">
+      <DependentUpon>ucDatBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienPhucVu\ucOrder.resx">
+      <DependentUpon>ucOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienThuNgan\frmNhanVienThuNgan.resx">
+      <DependentUpon>frmNhanVienThuNgan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{5c5d7580-97a0-4288-9fdd-ad1957774f7c}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{4cfe2203-8270-4e16-8f33-f4678b40c6fc}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
