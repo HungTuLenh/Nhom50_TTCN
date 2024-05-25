@@ -82,6 +82,18 @@
     <Compile Include="NhanVienThuNgan\frmNhanVienThuNgan.Designer.cs">
       <DependentUpon>frmNhanVienThuNgan.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienThuNgan\ucLichSuThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NhanVienThuNgan\ucLichSuThanhToan.Designer.cs">
+      <DependentUpon>ucLichSuThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienThuNgan\ucThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NhanVienThuNgan\ucThanhToan.Designer.cs">
+      <DependentUpon>ucThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDangNhap.resx">
@@ -101,6 +113,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienThuNgan\frmNhanVienThuNgan.resx">
       <DependentUpon>frmNhanVienThuNgan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienThuNgan\ucLichSuThanhToan.resx">
+      <DependentUpon>ucLichSuThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienThuNgan\ucThanhToan.resx">
+      <DependentUpon>ucThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

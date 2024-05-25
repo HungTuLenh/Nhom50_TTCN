@@ -77,39 +77,28 @@ namespace GUI.NhanVienPhucVu
             Button btn = (Button)sender;
             BanAn ban = btn.Tag as BanAn;
 
-            string maBan = ban.MaBan;
-            int soGhe = ban.SoGhe;
-            string trangThai = ban.TT;
-            string tenNgdat = ban.TenNgdat;
-            DateTime? thoiGian = ban.ThoiGian;
-            int soNguoi = ban.SoNguoi;
-            string ghiChu = ban.GhiChu;
-            string ttLienhe = ban.TtLienhe;
-
-            txtBan.Text = maBan;
-            txtSoghe.Text = soGhe.ToString();
-            txtTrangthai.Text = trangThai;
-            txtNguoidat.Text = tenNgdat;
-            if (thoiGian.HasValue)
+            txtBan.Text = ban.MaBan;
+            txtSoghe.Text = ban.SoGhe.ToString();
+            txtTrangthai.Text = ban.TT;
+            txtNguoidat.Text = ban.TenNgdat;
+            if (ban.ThoiGian.HasValue)
             {
-                pThoigian.Value = thoiGian.Value;
+                pThoigian.Value = ban.ThoiGian.Value;
             }
             else
             {
                 pThoigian.Value = pThoigian.MinDate;
             }
-            cbSonguoi.Text = soNguoi.ToString();
-            txtGhichu.Text = ghiChu;
-            txtThongtinlienhe.Text = ttLienhe;
+            cbSonguoi.Text = ban.SoNguoi.ToString();
+            txtGhichu.Text = ban.GhiChu;
+            txtThongtinlienhe.Text = ban.TtLienhe;
 
-            LoadSoNguoi(soGhe);
+            LoadSoNguoi(ban.SoGhe);
         }
 
         private void LoadSoNguoi(int Ghe)
         {
             List<int> values = Enumerable.Range(1, Ghe).ToList();
-
-            // Đổ dữ liệu vào ComboBox
             cbSonguoi.DataSource = values;
         }
 

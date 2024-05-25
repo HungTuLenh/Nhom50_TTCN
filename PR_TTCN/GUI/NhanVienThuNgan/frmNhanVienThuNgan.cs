@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.NhanVienPhucVu;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +16,50 @@ namespace GUI.NhanVienThuNgan
         public frmNhanVienThuNgan()
         {
             InitializeComponent();
+            LabelMove(lblThanhtoan);
+            LabelMove(lblLichsutt);
+        }
+
+        private void LabelMove(Control c)
+        {
+            lblMove.Height = c.Height;
+            lblMove.Top = c.Top;
         }
 
         private void lblThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
 
+        }
+
+        private void lblDangxuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.FormClosed += FrmNhanVienThuNgan_FormClosed;
+            frmDangNhap dn = new frmDangNhap();
+            dn.Show();
+        }
+        private void FrmNhanVienThuNgan_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lblThanhtoan_Click(object sender, EventArgs e)
+        {
+            LabelMove(lblThanhtoan);
+            if (!pnTn.Controls.Contains(ucThanhToan.Instance))
+            {
+                pnTn.Controls.Add(ucThanhToan.Instance);
+                ucThanhToan.Instance.Dock = DockStyle.Fill;
+                ucThanhToan.Instance.BringToFront();
+            }
+            else
+                ucThanhToan.Instance.BringToFront();
+        }
+
+        private void lblLichsutt_Click(object sender, EventArgs e)
+        {
+            LabelMove(lblLichsutt);
         }
     }
 }

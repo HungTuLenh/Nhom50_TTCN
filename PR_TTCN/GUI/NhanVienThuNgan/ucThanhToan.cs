@@ -6,34 +6,35 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.NhanVienPhucVu
+namespace GUI.NhanVienThuNgan
 {
-    public partial class ucOrder : UserControl
+    public partial class ucThanhToan : UserControl
     {
-        ChiTietHoaDon ct = new ChiTietHoaDon();
-        HoaDon hd = new HoaDon();
 
-        private static ucOrder instance;
-        public static ucOrder Instance
+        HoaDon hd = new HoaDon();
+        
+        private static ucThanhToan instance;
+        public static ucThanhToan Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new ucOrder();
+                    instance = new ucThanhToan();
                 return instance;
             }
         }
-        
-        public ucOrder()
+
+        public ucThanhToan()
         {
             InitializeComponent();
             LoadBan();
-            LoadLoaiMon();
-            txtNhanvien.Text = NhanVien.maNV;
+            string[] pttt = { "tiền mặt", "chuyển khoản", "thẻ tín dụng" };
+            cbPttt.DataSource = pttt;
         }
         void LoadBan()
         {
@@ -68,87 +69,64 @@ namespace GUI.NhanVienPhucVu
 
             }
         }
-        void LoadLoaiMon()
-        {
-            List<LoaiMon> dsloai = LoaiMonDAL.Instance.LayDSLoaiMon();
-            cbLoai.DataSource = dsloai;
-            cbLoai.DisplayMember = "tenloai";
-        }
-
-        void LoadMonBoiLoai(int maloai)
-        {
-            List<MonAn> dsmon = MonAnDAL.Instance.LayDSMon(maloai);
-            cbMon.DataSource = dsmon;
-            cbMon.DisplayMember = "tenmon";
-        }
         void ShowOrder(string maban)
         {
             lvOrder.Items.Clear();
             List<Order> lod = OrderDAL.Instance.LayDSOrder(maban);
+            int tongTien = 0;
             foreach (Order od in lod)
             {
                 ListViewItem lvi = new ListViewItem(od.TenMon.ToString());
                 lvi.SubItems.Add(od.SL.ToString());
                 lvi.SubItems.Add(od.Gia.ToString());
                 lvi.SubItems.Add(od.ThanhTien.ToString());
-
+                tongTien += od.ThanhTien;
                 lvOrder.Items.Add(lvi);
             }
+            int thue = tongTien * 5 / 100;
+            txtThue.Text = thue.ToString();
+            int chietKhau = tongTien * (int)numCk.Value / 100;
+            int ttFinal = tongTien + thue - chietKhau;
+
+            txtTongtien.Text = ttFinal.ToString();
             LoadBan();
         }
-
         private void btn_Click(object sender, EventArgs e)
         {
             LoadBan();
-            string maBan = ((sender as Button).Tag as BanAn).MaBan;
-            txtBan.Text = maBan;
-            ShowOrder(maBan);
+            Button btn = (Button)sender;
+            BanAn ban = btn.Tag as BanAn;
+
+            txtBan.Text = ban.MaBan;
+            txtTT.Text = ban.TT;
+
+            ShowOrder(ban.MaBan);
         }
 
-        private void cbLoai_SelectedIndexChanged(object sender, EventArgs e)
+        private void numCk_ValueChanged(object sender, EventArgs e)
         {
-            int maloai = 0;
-
-            ComboBox cb = sender as ComboBox;
-            
-            if (cb.SelectedItem == null)
-            {
-                return;
-            }
-            LoaiMon selected = cb.SelectedItem as LoaiMon;
-
-            maloai = selected.MaLoai;
-            LoadMonBoiLoai(maloai);
+            ShowOrder(txtBan.Text);
         }
 
-        private void btnOrder_Click(object sender, EventArgs e)
+        private void btnThanhtoan_Click(object sender, EventArgs e)
         {
-            BanAn ban = lvOrder.Tag as BanAn;
-            hd.MaBan = txtBan.Text;
-            hd.MaNV = txtNhanvien.Text;
-            ct.MaHd = HoaDonDAL.Instance.LayHoaDonChuaThanhToan(hd.MaBan);
-            ct.MaMon = (cbMon.SelectedItem as MonAn).MaMon;
-            ct.Sl = (int)numSl.Value;
-
-            if(txtBan.Text == "")
+            hd.MaHd = HoaDonDAL.Instance.LayHoaDonChuaThanhToan(txtBan.Text);
+            hd.TongTien = int.Parse(txtTongtien.Text);
+            hd.PtThantoan = cbPttt.Text.ToString(); 
+            if(txtTT.Text == "Trống" || txtTT.Text == "Đã đặt trước")
             {
-                MessageBox.Show("Chưa chọn bàn!");
+                MessageBox.Show(txtBan.Text + " không có hóa đơn");
             }
             else
             {
-                if(ct.MaHd == -1)
+                if (hd.MaHd != -1)
                 {
-                    HoaDonDAL.Instance.ThemHD(hd);
-                    ChiTietHoaDonDAL.Instance.ThemCTHD(HoaDonDAL.Instance.LayMaHDMax(), ct.MaMon, ct.Sl);
-                }
-                else
-                {
-                    ChiTietHoaDonDAL.Instance.ThemCTHD(ct.MaHd, ct.MaMon, ct.Sl);
+                    HoaDonDAL.Instance.ThanhToan(hd);
+                    ShowOrder(txtBan.Text);
+                    MessageBox.Show("Thanh toán thành công cho " + txtBan.Text);
                 }
             }
-            
-            ShowOrder(hd.MaBan);
-        }
 
+        }
     }
 }

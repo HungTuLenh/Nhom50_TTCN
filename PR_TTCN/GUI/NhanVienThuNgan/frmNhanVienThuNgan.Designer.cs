@@ -34,9 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDangxuat = new System.Windows.Forms.Label();
             this.lblMove = new System.Windows.Forms.Label();
             this.lblThanhtoan = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnTn = new System.Windows.Forms.Panel();
+            this.lblLichsutt = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -91,6 +93,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
+            this.panel2.Controls.Add(this.lblLichsutt);
+            this.panel2.Controls.Add(this.lblDangxuat);
             this.panel2.Controls.Add(this.lblMove);
             this.panel2.Controls.Add(this.lblThanhtoan);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -100,11 +104,27 @@
             this.panel2.Size = new System.Drawing.Size(218, 537);
             this.panel2.TabIndex = 2;
             // 
+            // lblDangxuat
+            // 
+            this.lblDangxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
+            this.lblDangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangxuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
+            this.lblDangxuat.Image = ((System.Drawing.Image)(resources.GetObject("lblDangxuat.Image")));
+            this.lblDangxuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDangxuat.Location = new System.Drawing.Point(22, 473);
+            this.lblDangxuat.Name = "lblDangxuat";
+            this.lblDangxuat.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblDangxuat.Size = new System.Drawing.Size(155, 55);
+            this.lblDangxuat.TabIndex = 4;
+            this.lblDangxuat.Text = "Đăng xuất";
+            this.lblDangxuat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDangxuat.Click += new System.EventHandler(this.lblDangxuat_Click);
+            // 
             // lblMove
             // 
             this.lblMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
             this.lblMove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
-            this.lblMove.Location = new System.Drawing.Point(-4, 89);
+            this.lblMove.Location = new System.Drawing.Point(-3, 113);
             this.lblMove.Name = "lblMove";
             this.lblMove.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblMove.Size = new System.Drawing.Size(15, 55);
@@ -114,32 +134,50 @@
             // lblThanhtoan
             // 
             this.lblThanhtoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
+            this.lblThanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThanhtoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
             this.lblThanhtoan.Image = ((System.Drawing.Image)(resources.GetObject("lblThanhtoan.Image")));
             this.lblThanhtoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblThanhtoan.Location = new System.Drawing.Point(21, 89);
+            this.lblThanhtoan.Location = new System.Drawing.Point(22, 113);
             this.lblThanhtoan.Name = "lblThanhtoan";
             this.lblThanhtoan.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblThanhtoan.Size = new System.Drawing.Size(162, 55);
             this.lblThanhtoan.TabIndex = 0;
             this.lblThanhtoan.Text = "Thanh toán";
             this.lblThanhtoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblThanhtoan.Click += new System.EventHandler(this.lblThanhtoan_Click);
             // 
-            // panel3
+            // pnTn
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(218, 63);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(982, 537);
-            this.panel3.TabIndex = 3;
+            this.pnTn.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnTn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnTn.Location = new System.Drawing.Point(218, 63);
+            this.pnTn.Name = "pnTn";
+            this.pnTn.Size = new System.Drawing.Size(982, 537);
+            this.pnTn.TabIndex = 3;
+            // 
+            // lblLichsutt
+            // 
+            this.lblLichsutt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
+            this.lblLichsutt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLichsutt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
+            this.lblLichsutt.Image = ((System.Drawing.Image)(resources.GetObject("lblLichsutt.Image")));
+            this.lblLichsutt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblLichsutt.Location = new System.Drawing.Point(22, 168);
+            this.lblLichsutt.Name = "lblLichsutt";
+            this.lblLichsutt.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblLichsutt.Size = new System.Drawing.Size(222, 55);
+            this.lblLichsutt.TabIndex = 5;
+            this.lblLichsutt.Text = "Lịch sử thanh toán";
+            this.lblLichsutt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLichsutt.Click += new System.EventHandler(this.lblLichsutt_Click);
             // 
             // frmNhanVienThuNgan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 600);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnTn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -160,6 +198,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblMove;
         private System.Windows.Forms.Label lblThanhtoan;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnTn;
+        private System.Windows.Forms.Label lblDangxuat;
+        private System.Windows.Forms.Label lblLichsutt;
     }
 }

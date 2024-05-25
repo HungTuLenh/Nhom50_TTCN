@@ -52,5 +52,10 @@ namespace DAL
                 return 1;
             }
         }
+        public void ThanhToan(HoaDon hd)
+        {
+            string query = string.Format("UPDATE tblhoadonthanhtoan SET trangthai = 1, ngaythanhtoan = GETDATE(), phuongthuctt = N'{0}', tongtien = {1} WHERE mahd = {2}", hd.PtThantoan, hd.TongTien, hd.MaHd);
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
     }
 }
