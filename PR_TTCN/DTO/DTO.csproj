@@ -47,6 +47,7 @@
     <Compile Include="DatBan.cs" />
     <Compile Include="HoaDon.cs" />
     <Compile Include="LoaiMon.cs" />
+    <Compile Include="LSHoaDon.cs" />
     <Compile Include="MonAn.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

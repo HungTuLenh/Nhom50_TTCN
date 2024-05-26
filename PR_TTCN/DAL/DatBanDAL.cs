@@ -29,7 +29,7 @@ namespace DAL
 
         public bool Datban(DatBan db)
         {
-            string query = string.Format("INSERT tblDatBan (manv, maban, tennguoidat, songuoi, ghichu, thoigian, thongtinlienhe) VALUES ( '{0}', '{1}', N'{2}', {3}, N'{4}', '{5}', '{6}')", db.MaNV, db.MaBan, db.TenNgDat, db.SoNguoi, db.GhiChu, db.ThoiGian.ToString("dd-MMM-yyyy hh:mm:ss"), db.TtLienhe );
+            string query = string.Format("INSERT tblDatBan (manv, maban, tennguoidat, songuoi, ghichu, thoigian, thongtinlienhe) VALUES ( '{0}', '{1}', N'{2}', {3}, N'{4}', '{5}', '{6}')", db.MaNV, db.MaBan, db.TenNgDat, db.SoNguoi, db.GhiChu, db.ThoiGian.ToString(), db.TtLienhe );
             int rs = DataProvider.Instance.ExecuteNonQuery( query );
             return rs > 0;
         }

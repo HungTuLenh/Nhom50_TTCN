@@ -57,5 +57,19 @@ namespace DAL
             string query = string.Format("UPDATE tblhoadonthanhtoan SET trangthai = 1, ngaythanhtoan = GETDATE(), phuongthuctt = N'{0}', tongtien = {1} WHERE mahd = {2}", hd.PtThantoan, hd.TongTien, hd.MaHd);
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+
+
+        public List<LSHoaDon> loadDsHD(DateTime ngaybd, DateTime ngaykt)
+        {
+            List<LSHoaDon> hdl = new List<LSHoaDon>();
+            string query = "SP_LayDSHD @ngaybd , @ngaykt";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { ngaybd, ngaykt});
+            foreach (DataRow dr in dt.Rows)
+            {
+                LSHoaDon hd = new LSHoaDon(dr);
+                hdl.Add(hd);
+            }
+            return hdl;
+        }
     }
 }

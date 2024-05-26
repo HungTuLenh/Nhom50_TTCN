@@ -60,6 +60,14 @@ namespace GUI.NhanVienThuNgan
         private void lblLichsutt_Click(object sender, EventArgs e)
         {
             LabelMove(lblLichsutt);
+            if (!pnTn.Controls.Contains(ucLichSuThanhToan.Instance))
+            {
+                pnTn.Controls.Add(ucLichSuThanhToan.Instance);
+                ucLichSuThanhToan.Instance.Dock = DockStyle.Fill;
+                ucLichSuThanhToan.Instance.BringToFront();
+            }
+            else
+                ucLichSuThanhToan.Instance.BringToFront();
         }
     }
 }

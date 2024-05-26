@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -17,7 +18,7 @@ namespace GUI.NhanVienThuNgan
     {
 
         HoaDon hd = new HoaDon();
-        
+        int ttFinal = 0;
         private static ucThanhToan instance;
         public static ucThanhToan Instance
         {
@@ -86,9 +87,9 @@ namespace GUI.NhanVienThuNgan
             int thue = tongTien * 5 / 100;
             txtThue.Text = thue.ToString();
             int chietKhau = tongTien * (int)numCk.Value / 100;
-            int ttFinal = tongTien + thue - chietKhau;
+            ttFinal = tongTien + thue - chietKhau;
+            txtTongtien.Text = ttFinal.ToString("N0");
 
-            txtTongtien.Text = ttFinal.ToString();
             LoadBan();
         }
         private void btn_Click(object sender, EventArgs e)
@@ -111,8 +112,9 @@ namespace GUI.NhanVienThuNgan
         private void btnThanhtoan_Click(object sender, EventArgs e)
         {
             hd.MaHd = HoaDonDAL.Instance.LayHoaDonChuaThanhToan(txtBan.Text);
-            hd.TongTien = int.Parse(txtTongtien.Text);
+            hd.TongTien = ttFinal;
             hd.PtThantoan = cbPttt.Text.ToString(); 
+
             if(txtTT.Text == "Trống" || txtTT.Text == "Đã đặt trước")
             {
                 MessageBox.Show(txtBan.Text + " không có hóa đơn");
