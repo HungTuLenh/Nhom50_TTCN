@@ -58,6 +58,12 @@
     <Compile Include="NhanVienBep\frmNhanVienBep.Designer.cs">
       <DependentUpon>frmNhanVienBep.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienBep\ucHangHoa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NhanVienBep\ucHangHoa.Designer.cs">
+      <DependentUpon>ucHangHoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVienPhucVu\frmNhanVienPhucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     <EmbeddedResource Include="NhanVienBep\frmNhanVienBep.resx">
       <DependentUpon>frmNhanVienBep.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienBep\ucHangHoa.resx">
+      <DependentUpon>ucHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVienPhucVu\frmNhanVienPhucVu.resx">
       <DependentUpon>frmNhanVienPhucVu.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +137,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -152,6 +162,32 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\iconizer-warehouse-alt %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconizer-hat-chef %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconizer-table-rows %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconizer-utensils %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconizer-sign-out-alt %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconizer-file-invoice-dollar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconizer-completed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconizer-circle-xmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-1-e1677906278168.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

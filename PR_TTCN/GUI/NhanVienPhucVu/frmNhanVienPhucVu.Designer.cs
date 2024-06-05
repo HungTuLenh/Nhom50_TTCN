@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVienPhucVu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblThoat = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +59,7 @@
             // 
             this.lblThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(176)))), ((int)(((byte)(126)))));
-            this.lblThoat.Image = ((System.Drawing.Image)(resources.GetObject("lblThoat.Image")));
+            this.lblThoat.Image = global::GUI.Properties.Resources.iconizer_circle_xmark;
             this.lblThoat.Location = new System.Drawing.Point(1149, 12);
             this.lblThoat.Name = "lblThoat";
             this.lblThoat.Size = new System.Drawing.Size(25, 25);
@@ -82,7 +81,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::GUI.Properties.Resources.logo_1_e1677906278168;
             this.pictureBox1.Location = new System.Drawing.Point(55, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
@@ -109,7 +108,7 @@
             this.lblDangxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
             this.lblDangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDangxuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
-            this.lblDangxuat.Image = ((System.Drawing.Image)(resources.GetObject("lblDangxuat.Image")));
+            this.lblDangxuat.Image = global::GUI.Properties.Resources.iconizer_sign_out_alt__1_;
             this.lblDangxuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblDangxuat.Location = new System.Drawing.Point(21, 473);
             this.lblDangxuat.Name = "lblDangxuat";
@@ -125,9 +124,9 @@
             this.lblOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
             this.lblOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
-            this.lblOrder.Image = ((System.Drawing.Image)(resources.GetObject("lblOrder.Image")));
+            this.lblOrder.Image = global::GUI.Properties.Resources.iconizer_utensils__1_;
             this.lblOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblOrder.Location = new System.Drawing.Point(21, 157);
+            this.lblOrder.Location = new System.Drawing.Point(21, 173);
             this.lblOrder.Name = "lblOrder";
             this.lblOrder.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblOrder.Size = new System.Drawing.Size(127, 55);
@@ -140,7 +139,7 @@
             // 
             this.lblMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
             this.lblMove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
-            this.lblMove.Location = new System.Drawing.Point(-4, 102);
+            this.lblMove.Location = new System.Drawing.Point(-4, 118);
             this.lblMove.Name = "lblMove";
             this.lblMove.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblMove.Size = new System.Drawing.Size(15, 55);
@@ -152,9 +151,9 @@
             this.lblDatban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
             this.lblDatban.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDatban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
-            this.lblDatban.Image = ((System.Drawing.Image)(resources.GetObject("lblDatban.Image")));
+            this.lblDatban.Image = global::GUI.Properties.Resources.iconizer_table_rows__1_;
             this.lblDatban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDatban.Location = new System.Drawing.Point(21, 102);
+            this.lblDatban.Location = new System.Drawing.Point(21, 118);
             this.lblDatban.Name = "lblDatban";
             this.lblDatban.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblDatban.Size = new System.Drawing.Size(143, 55);

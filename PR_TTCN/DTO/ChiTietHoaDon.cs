@@ -9,13 +9,6 @@ namespace DTO
 {
     public class ChiTietHoaDon
     {
-        public ChiTietHoaDon(int mahd, int mamon, int masl) 
-        {
-            this.MaHd = mahd;
-            this.MaMon = mamon;
-            this.Sl = masl;
-
-        }
         public ChiTietHoaDon(DataRow row)
         {
             this.MaHd = (int)row["mahd"];

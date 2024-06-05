@@ -66,6 +66,7 @@ namespace GUI
                     nvtn.Show();
                     break;
                 case 3:
+                    NhanVien.maNV = dn.MaNV;
                     this.Hide();
                     this.FormClosed += FrmDangNhap_FormClosed;
                     frmNhanVienBep nvb = new frmNhanVienBep();

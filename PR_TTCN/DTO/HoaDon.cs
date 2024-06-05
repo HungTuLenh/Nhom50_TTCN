@@ -9,17 +9,6 @@ namespace DTO
 {
     public class HoaDon
     {
-        public HoaDon(int mahd, string maban, string pttt, string manv, DateTime? ngaytt, int tt, int tongtien)    
-        {
-            this.MaHd = mahd;
-            this.MaBan = maban;
-            this.PtThantoan = pttt;
-            this.MaNV = manv;
-            this.NgayTT = ngaytt;
-            this.TrangThai = tt;
-            this.TongTien = tongtien;
-        }
-        
         public HoaDon(DataRow row) 
         {
             this.MaHd = (int)row["mahd"];

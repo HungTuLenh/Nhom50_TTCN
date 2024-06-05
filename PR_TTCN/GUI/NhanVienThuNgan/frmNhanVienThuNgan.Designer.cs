@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVienThuNgan));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblThoat = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblLichsutt = new System.Windows.Forms.Label();
             this.lblDangxuat = new System.Windows.Forms.Label();
             this.lblMove = new System.Windows.Forms.Label();
             this.lblThanhtoan = new System.Windows.Forms.Label();
             this.pnTn = new System.Windows.Forms.Panel();
-            this.lblLichsutt = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -60,7 +59,7 @@
             // 
             this.lblThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(176)))), ((int)(((byte)(126)))));
-            this.lblThoat.Image = ((System.Drawing.Image)(resources.GetObject("lblThoat.Image")));
+            this.lblThoat.Image = global::GUI.Properties.Resources.iconizer_circle_xmark;
             this.lblThoat.Location = new System.Drawing.Point(1149, 12);
             this.lblThoat.Name = "lblThoat";
             this.lblThoat.Size = new System.Drawing.Size(25, 25);
@@ -82,7 +81,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::GUI.Properties.Resources.logo_1_e1677906278168;
             this.pictureBox1.Location = new System.Drawing.Point(55, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
@@ -104,12 +103,28 @@
             this.panel2.Size = new System.Drawing.Size(218, 537);
             this.panel2.TabIndex = 2;
             // 
+            // lblLichsutt
+            // 
+            this.lblLichsutt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
+            this.lblLichsutt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLichsutt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
+            this.lblLichsutt.Image = global::GUI.Properties.Resources.iconizer_completed;
+            this.lblLichsutt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblLichsutt.Location = new System.Drawing.Point(22, 168);
+            this.lblLichsutt.Name = "lblLichsutt";
+            this.lblLichsutt.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblLichsutt.Size = new System.Drawing.Size(222, 55);
+            this.lblLichsutt.TabIndex = 5;
+            this.lblLichsutt.Text = "Lịch sử thanh toán";
+            this.lblLichsutt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLichsutt.Click += new System.EventHandler(this.lblLichsutt_Click);
+            // 
             // lblDangxuat
             // 
             this.lblDangxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
             this.lblDangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDangxuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
-            this.lblDangxuat.Image = ((System.Drawing.Image)(resources.GetObject("lblDangxuat.Image")));
+            this.lblDangxuat.Image = global::GUI.Properties.Resources.iconizer_sign_out_alt__1_;
             this.lblDangxuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblDangxuat.Location = new System.Drawing.Point(22, 473);
             this.lblDangxuat.Name = "lblDangxuat";
@@ -136,7 +151,7 @@
             this.lblThanhtoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
             this.lblThanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThanhtoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
-            this.lblThanhtoan.Image = ((System.Drawing.Image)(resources.GetObject("lblThanhtoan.Image")));
+            this.lblThanhtoan.Image = global::GUI.Properties.Resources.iconizer_file_invoice_dollar__1_;
             this.lblThanhtoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblThanhtoan.Location = new System.Drawing.Point(22, 113);
             this.lblThanhtoan.Name = "lblThanhtoan";
@@ -155,22 +170,6 @@
             this.pnTn.Name = "pnTn";
             this.pnTn.Size = new System.Drawing.Size(982, 537);
             this.pnTn.TabIndex = 3;
-            // 
-            // lblLichsutt
-            // 
-            this.lblLichsutt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
-            this.lblLichsutt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLichsutt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
-            this.lblLichsutt.Image = ((System.Drawing.Image)(resources.GetObject("lblLichsutt.Image")));
-            this.lblLichsutt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblLichsutt.Location = new System.Drawing.Point(22, 168);
-            this.lblLichsutt.Name = "lblLichsutt";
-            this.lblLichsutt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblLichsutt.Size = new System.Drawing.Size(222, 55);
-            this.lblLichsutt.TabIndex = 5;
-            this.lblLichsutt.Text = "Lịch sử thanh toán";
-            this.lblLichsutt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblLichsutt.Click += new System.EventHandler(this.lblLichsutt_Click);
             // 
             // frmNhanVienThuNgan
             // 

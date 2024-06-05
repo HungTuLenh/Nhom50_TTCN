@@ -29,7 +29,6 @@ namespace DAL
 
         private BanAnDAL() { }
 
-
         public List<BanAn> loadDsBan()
         {
             List<BanAn> tl = new List<BanAn> ();

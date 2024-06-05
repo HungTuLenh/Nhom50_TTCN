@@ -52,7 +52,7 @@
             this.txtManv.Name = "txtManv";
             this.txtManv.Size = new System.Drawing.Size(391, 19);
             this.txtManv.TabIndex = 0;
-            this.txtManv.Text = "nv02";
+            this.txtManv.Text = "nv03";
             // 
             // txtMatkhau
             // 
