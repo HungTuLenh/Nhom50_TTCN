@@ -145,7 +145,7 @@ namespace GUI.NhanVienPhucVu
                 db.ThoiGian = pThoigian.Value;
                 db.TtLienhe = txtThongtinlienhe.Text;
 
-                if(DatBanDAL.Instance.Datban(db))
+                if(BanAnDAL.Instance.Datban(db))
                 {
                     MessageBox.Show("Đặt thành công!");
                 
@@ -174,9 +174,9 @@ namespace GUI.NhanVienPhucVu
 
                 db.MaBan = txtBan.Text;
 
-                if (DatBanDAL.Instance.Huydat(db))
+                if (BanAnDAL.Instance.Huydat(db))
                 {
-                    DatBanDAL.Instance.CapnhatTT(db);
+                    BanAnDAL.Instance.CapnhatTT(db);
                     MessageBox.Show("Hủy thành công!");
 
                 }

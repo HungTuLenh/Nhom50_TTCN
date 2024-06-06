@@ -38,6 +38,8 @@ namespace GUI.NhanVienBep
             {
                 LoadDSN();
             }
+            txtSl.KeyPress += new KeyPressEventHandler(txtSo_KeyPress);
+            txtSdung.KeyPress += new KeyPressEventHandler(txtSo_KeyPress);
         }
         void LoadNCC()
         {
@@ -154,6 +156,14 @@ namespace GUI.NhanVienBep
             {
                 NhapHangDAL.Instance.CapNhapHang((int)cbH.SelectedValue, Int32.Parse(txtSdung.Text));
                 ShowHH();
+            }
+        }
+
+        private void txtSo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

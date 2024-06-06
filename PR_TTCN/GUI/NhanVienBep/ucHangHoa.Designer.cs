@@ -252,6 +252,7 @@
             this.txtSl.Name = "txtSl";
             this.txtSl.Size = new System.Drawing.Size(76, 22);
             this.txtSl.TabIndex = 37;
+            this.txtSl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSo_KeyPress);
             // 
             // label6
             // 
@@ -327,6 +328,7 @@
             this.txtSdung.Name = "txtSdung";
             this.txtSdung.Size = new System.Drawing.Size(76, 26);
             this.txtSdung.TabIndex = 40;
+            this.txtSdung.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSo_KeyPress);
             // 
             // btnCapnhat
             // 

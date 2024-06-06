@@ -6,17 +6,6 @@ namespace DTO
 {
     public class BanAn
     {
-        public BanAn(string maban, int soghe, string tt, string tenNgdat, DateTime thoiGian, int soNguoi, string ghiChu, string ttLienhe)
-        {
-            this.MaBan = maban;
-            this.SoGhe = soghe;
-            this.TT = tt;
-            TenNgdat = tenNgdat;
-            ThoiGian = thoiGian;
-            SoNguoi = soNguoi;
-            GhiChu = ghiChu;
-            TtLienhe = ttLienhe;
-        }
         public BanAn(DataRow row)
         {
             this.MaBan = row["maban"].ToString();
@@ -52,6 +41,35 @@ namespace DTO
         public DateTime? ThoiGian { get => thoiGian; set => thoiGian = value; }
         public int SoNguoi { get => soNguoi; set => soNguoi = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
+        public string TtLienhe { get => ttLienhe; set => ttLienhe = value; }
+    }
+
+    public class DatBan
+    {
+        public DatBan(DataRow row)
+        {
+            this.TenNgDat = row["tennguoidat"].ToString();
+            this.SoNguoi = (int)row["songuoi"];
+            this.GhiChu = row["ghichu"].ToString();
+            this.ThoiGian = (DateTime)row["thoigian"];
+            this.TtLienhe = row["thongtinlienhe"].ToString();
+        }
+        public DatBan() { }
+
+        private string maNV;
+        private string maBan;
+        private string tenNgDat;
+        private int soNguoi;
+        private string ghiChu;
+        private DateTime thoiGian;
+        private string ttLienhe;
+
+        public string MaNV { get => maNV; set => maNV = value; }
+        public string MaBan { get => maBan; set => maBan = value; }
+        public string TenNgDat { get => tenNgDat; set => tenNgDat = value; }
+        public int SoNguoi { get => soNguoi; set => soNguoi = value; }
+        public string GhiChu { get => ghiChu; set => ghiChu = value; }
+        public DateTime ThoiGian { get => thoiGian; set => thoiGian = value; }
         public string TtLienhe { get => ttLienhe; set => ttLienhe = value; }
     }
 }

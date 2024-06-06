@@ -110,7 +110,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
-            this.label2.Image = global::GUI.Properties.Resources.iconizer_warehouse_alt__1_;
+            this.label2.Image = global::GUI.Properties.Resources.time_past;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Location = new System.Drawing.Point(17, 218);
             this.label2.Name = "label2";

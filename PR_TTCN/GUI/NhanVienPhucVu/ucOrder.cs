@@ -70,7 +70,7 @@ namespace GUI.NhanVienPhucVu
         }
         void LoadLoaiMon()
         {
-            List<LoaiMon> dsloai = LoaiMonDAL.Instance.LayDSLoaiMon();
+            List<LoaiMon> dsloai = MonAnDAL.Instance.LayDSLoaiMon();
             cbLoai.DataSource = dsloai;
             cbLoai.DisplayMember = "tenloai";
         }
@@ -84,7 +84,7 @@ namespace GUI.NhanVienPhucVu
         void ShowOrder(string maban)
         {
             lvOrder.Items.Clear();
-            List<Order> lod = OrderDAL.Instance.LayDSOrder(maban);
+            List<Order> lod = HoaDonDAL.Instance.LayDSOrder(maban);
             foreach (Order od in lod)
             {
                 ListViewItem lvi = new ListViewItem(od.TenMon.ToString());
@@ -139,11 +139,11 @@ namespace GUI.NhanVienPhucVu
                 if(ct.MaHd == -1)
                 {
                     HoaDonDAL.Instance.ThemHD(hd);
-                    ChiTietHoaDonDAL.Instance.ThemCTHD(HoaDonDAL.Instance.LayMaHDMax(), ct.MaMon, ct.Sl);
+                    HoaDonDAL.Instance.ThemCTHD(HoaDonDAL.Instance.LayMaHDMax(), ct.MaMon, ct.Sl);
                 }
                 else
                 {
-                    ChiTietHoaDonDAL.Instance.ThemCTHD(ct.MaHd, ct.MaMon, ct.Sl);
+                    HoaDonDAL.Instance.ThemCTHD(ct.MaHd, ct.MaMon, ct.Sl);
                 }
             }
             

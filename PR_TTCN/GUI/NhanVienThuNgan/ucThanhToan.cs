@@ -73,7 +73,7 @@ namespace GUI.NhanVienThuNgan
         void ShowOrder(string maban)
         {
             lvOrder.Items.Clear();
-            List<Order> lod = OrderDAL.Instance.LayDSOrder(maban);
+            List<Order> lod = HoaDonDAL.Instance.LayDSOrder(maban);
             int tongTien = 0;
             foreach (Order od in lod)
             {

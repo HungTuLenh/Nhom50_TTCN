@@ -38,5 +38,17 @@ namespace DAL
             }
             return ds;
         }
+        public List<LoaiMon> LayDSLoaiMon()
+        {
+            List<LoaiMon> ds = new List<LoaiMon>();
+            string query = "select * from tblloaimon";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow dr in dt.Rows)
+            {
+                LoaiMon lm = new LoaiMon(dr);
+                ds.Add(lm);
+            }
+            return ds;
+        }
     }
 }

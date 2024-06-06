@@ -9,15 +9,6 @@ namespace DTO
 {
     public class MonAn
     {
-        public MonAn(int mamon, string tenmon, int dongia, int maloai)
-        {
-            this.MaMon = mamon;
-            this.TenMon = tenmon;
-            this.DonGia = dongia;
-            this.MaLoai = maloai;
-
-        }
-
         public MonAn(DataRow row)
         {
             this.MaMon = (int)row["mamon"];
@@ -33,6 +24,21 @@ namespace DTO
         public int MaMon { get => maMon; set => maMon = value; }
         public string TenMon { get => tenMon; set => tenMon = value; }
         public int DonGia { get => donGia; set => donGia = value; }
+        public int MaLoai { get => maLoai; set => maLoai = value; }
+    }
+
+    public class LoaiMon
+    {
+
+        public LoaiMon(DataRow row)
+        {
+            this.MaLoai = (int)row["maloai"];
+            this.TenLoai = row["tenloai"].ToString();
+        }
+        private int maLoai;
+        private string tenLoai;
+
+        public string TenLoai { get => tenLoai; set => tenLoai = value; }
         public int MaLoai { get => maLoai; set => maLoai = value; }
     }
 }
