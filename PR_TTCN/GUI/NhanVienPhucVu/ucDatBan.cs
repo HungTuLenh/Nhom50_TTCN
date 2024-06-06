@@ -171,10 +171,9 @@ namespace GUI.NhanVienPhucVu
             }
             else
             {
-
                 db.MaBan = txtBan.Text;
 
-                if (BanAnDAL.Instance.Huydat(db))
+                if (BanAnDAL.Instance.Huydat(db.MaBan))
                 {
                     BanAnDAL.Instance.CapnhatTT(db);
                     MessageBox.Show("Hủy thành công!");

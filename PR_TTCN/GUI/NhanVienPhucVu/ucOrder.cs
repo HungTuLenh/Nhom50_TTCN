@@ -16,7 +16,7 @@ namespace GUI.NhanVienPhucVu
     {
         ChiTietHoaDon ct = new ChiTietHoaDon();
         HoaDon hd = new HoaDon();
-
+        string tt = "";
         private static ucOrder instance;
         public static ucOrder Instance
         {
@@ -102,6 +102,7 @@ namespace GUI.NhanVienPhucVu
             LoadBan();
             string maBan = ((sender as Button).Tag as BanAn).MaBan;
             txtBan.Text = maBan;
+            tt = ((sender as Button).Tag as BanAn).TT;
             ShowOrder(maBan);
         }
 
@@ -138,6 +139,10 @@ namespace GUI.NhanVienPhucVu
             {
                 if(ct.MaHd == -1)
                 {
+                    if (tt == "Đã đặt trước")
+                    {
+                        BanAnDAL.Instance.Huydat(txtBan.Text);
+                    }
                     HoaDonDAL.Instance.ThemHD(hd);
                     HoaDonDAL.Instance.ThemCTHD(HoaDonDAL.Instance.LayMaHDMax(), ct.MaMon, ct.Sl);
                 }

@@ -98,5 +98,18 @@ namespace DAL
             string query = "UpdateSoLuongHangHoa @mahang , @sudung ";
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { mahang, sudung });
         }
+
+        public List<LSuNhap> loadDsN(DateTime ngaybd, DateTime ngaykt)
+        {
+            List<LSuNhap> ln = new List<LSuNhap>();
+            string query = "GetLichSuNhapHang @ngaybd , @ngaykt";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { ngaybd, ngaykt });
+            foreach (DataRow dr in dt.Rows)
+            {
+                LSuNhap n = new LSuNhap (dr);
+                ln.Add(n);
+            }
+            return ln;
+        }
     }
 }

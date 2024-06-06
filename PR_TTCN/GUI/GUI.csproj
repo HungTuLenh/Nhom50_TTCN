@@ -64,6 +64,18 @@
     <Compile Include="NhanVienBep\ucHangHoa.Designer.cs">
       <DependentUpon>ucHangHoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienBep\ucLishSuNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NhanVienBep\ucLishSuNhap.Designer.cs">
+      <DependentUpon>ucLishSuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienBep\ucNhanOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NhanVienBep\ucNhanOrder.Designer.cs">
+      <DependentUpon>ucNhanOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVienPhucVu\frmNhanVienPhucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienBep\ucHangHoa.resx">
       <DependentUpon>ucHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienBep\ucLishSuNhap.resx">
+      <DependentUpon>ucLishSuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienBep\ucNhanOrder.resx">
+      <DependentUpon>ucNhanOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienPhucVu\frmNhanVienPhucVu.resx">
       <DependentUpon>frmNhanVienPhucVu.cs</DependentUpon>

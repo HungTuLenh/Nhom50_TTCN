@@ -267,7 +267,6 @@
             // pThoigian
             // 
             this.pThoigian.CustomFormat = "dd/MM/yyyy";
-            this.pThoigian.Enabled = false;
             this.pThoigian.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pThoigian.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.pThoigian.Location = new System.Drawing.Point(92, 76);

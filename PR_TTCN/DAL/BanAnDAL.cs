@@ -46,9 +46,9 @@ namespace DAL
             int rs = DataProvider.Instance.ExecuteNonQuery(query);
             return rs > 0;
         }
-        public bool Huydat(DatBan db)
+        public bool Huydat(string maban)
         {
-            string query = string.Format("DELETE FROM tblDatBan WHERE maban = '{0}'", db.MaBan);
+            string query = string.Format("DELETE FROM tblDatBan WHERE maban = '{0}'", maban);
             int rs = DataProvider.Instance.ExecuteNonQuery(query);
             return rs > 0;
         }

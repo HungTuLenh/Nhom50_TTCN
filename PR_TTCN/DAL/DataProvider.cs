@@ -24,7 +24,7 @@ namespace DAL
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=LAPTOP-KKNF42CS\\SQLEXPRESS;Initial Catalog = quanlynhahang; Integrated Security = True";
+        private string connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog = quanlynhahang; Integrated Security = True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

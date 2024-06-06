@@ -24,7 +24,6 @@ namespace DTO
             this.TongTien = (int)row["tongtien"];
 
         }
-        
         public HoaDon() { }
 
         private int maHd;

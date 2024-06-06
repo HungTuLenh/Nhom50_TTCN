@@ -40,4 +40,24 @@ namespace DTO
         public string Tenhang { get => tenhang; set => tenhang = value; }
         public int Dongia { get => dongia; set => dongia = value; }
     }
+
+    public class LSuNhap
+    {
+        public LSuNhap(DataRow row)
+        {
+            this.Ngaynhap = (DateTime)row["NgayNhap"];
+            this.Tennv = row["tennv"].ToString();
+            this.Tenncc = row["tenncc"].ToString();
+            this.Tongtien = (int)row["tongtien"];
+        }
+        private DateTime ngaynhap;
+        private string tennv;
+        private string tenncc;
+        private int tongtien;
+
+        public int Tongtien { get => tongtien; set => tongtien = value; }
+        public string Tenncc { get => tenncc; set => tenncc = value; }
+        public string Tennv { get => tennv; set => tennv = value; }
+        public DateTime Ngaynhap { get => ngaynhap; set => ngaynhap = value; }
+    }
 }

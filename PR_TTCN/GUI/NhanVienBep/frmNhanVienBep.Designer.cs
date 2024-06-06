@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblLsuNhap = new System.Windows.Forms.Label();
             this.lblDangxuat = new System.Windows.Forms.Label();
             this.lblHang = new System.Windows.Forms.Label();
             this.lblOrder = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lblLsuNhap);
             this.panel2.Controls.Add(this.lblDangxuat);
             this.panel2.Controls.Add(this.lblHang);
             this.panel2.Controls.Add(this.lblOrder);
@@ -105,20 +105,21 @@
             this.panel2.Size = new System.Drawing.Size(218, 537);
             this.panel2.TabIndex = 2;
             // 
-            // label2
+            // lblLsuNhap
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
-            this.label2.Image = global::GUI.Properties.Resources.time_past;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(17, 218);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(180, 55);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Lịch sử nhập";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLsuNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(59)))), ((int)(((byte)(41)))));
+            this.lblLsuNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLsuNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(166)))), ((int)(((byte)(116)))));
+            this.lblLsuNhap.Image = global::GUI.Properties.Resources.time_past;
+            this.lblLsuNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblLsuNhap.Location = new System.Drawing.Point(17, 218);
+            this.lblLsuNhap.Name = "lblLsuNhap";
+            this.lblLsuNhap.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblLsuNhap.Size = new System.Drawing.Size(180, 55);
+            this.lblLsuNhap.TabIndex = 7;
+            this.lblLsuNhap.Text = "Lịch sử nhập";
+            this.lblLsuNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLsuNhap.Click += new System.EventHandler(this.lblLsuNhap_Click);
             // 
             // lblDangxuat
             // 
@@ -166,6 +167,7 @@
             this.lblOrder.TabIndex = 4;
             this.lblOrder.Text = "Nhận order";
             this.lblOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOrder.Click += new System.EventHandler(this.lblOrder_Click);
             // 
             // lblMove
             // 
@@ -217,6 +219,6 @@
         private System.Windows.Forms.Label lblDangxuat;
         private System.Windows.Forms.Label lblHang;
         private System.Windows.Forms.Label lblOrder;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblLsuNhap;
     }
 }

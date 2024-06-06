@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using GUI.NhanVienThuNgan;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,26 +12,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.NhanVienThuNgan
+namespace GUI.NhanVienBep
 {
-    public partial class ucLichSuThanhToan : UserControl
+    public partial class ucLishSuNhap : UserControl
     {
-        private static ucLichSuThanhToan instance;
-        public static ucLichSuThanhToan Instance
+        private static ucLishSuNhap instance;
+        public static ucLishSuNhap Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new ucLichSuThanhToan();
+                    instance = new ucLishSuNhap();
                 return instance;
             }
         }
-
-        public ucLichSuThanhToan()
+        public ucLishSuNhap()
         {
             InitializeComponent();
             LoadDate();
-            ShowDSHD(tpBd.Value, tpKt.Value);
+            ShowDSN(tpBd.Value, tpKt.Value);
         }
 
         void LoadDate()
@@ -40,19 +40,20 @@ namespace GUI.NhanVienThuNgan
             tpKt.Value = tpBd.Value.AddMonths(1);
         }
 
-        void ShowDSHD(DateTime ngaybd, DateTime ngaykt)
+        void ShowDSN(DateTime ngaybd, DateTime ngaykt)
         {
-            lvHD.Items.Clear();
-            List<LSHoaDon> lhd = HoaDonDAL.Instance.loadDsHD(ngaybd, ngaykt);
+            lvN.Items.Clear();
+            List<LSuNhap> ln = NhapHangDAL.Instance.loadDsN(ngaybd, ngaykt);
             int tongDthu = 0;
-            foreach (LSHoaDon hd in lhd)
+            foreach (LSuNhap n in ln)
             {
-                ListViewItem lvi = new ListViewItem(hd.MaBan.ToString());
-                lvi.SubItems.Add(hd.TongTien.ToString());
-                lvi.SubItems.Add(hd.NgayTT.ToString());
-                tongDthu += hd.TongTien;
+                ListViewItem lvi = new ListViewItem(n.Ngaynhap.ToString());
+                lvi.SubItems.Add(n.Tennv.ToString());
+                lvi.SubItems.Add(n.Tenncc.ToString());
+                lvi.SubItems.Add(n.Tongtien.ToString());
+                tongDthu += n.Tongtien;
 
-                lvHD.Items.Add(lvi);
+                lvN.Items.Add(lvi);
             }
             CultureInfo ct = new CultureInfo("vi-VN");
             txtTongdthu.Text = tongDthu.ToString("c", ct);
@@ -61,12 +62,12 @@ namespace GUI.NhanVienThuNgan
 
         private void tpKt_ValueChanged(object sender, EventArgs e)
         {
-            ShowDSHD(tpBd.Value, tpKt.Value);
+            ShowDSN(tpBd.Value, tpKt.Value);
         }
 
         private void tpBd_ValueChanged(object sender, EventArgs e)
         {
-            ShowDSHD(tpBd.Value, tpKt.Value);
+            ShowDSN(tpBd.Value, tpKt.Value);
         }
     }
 }

@@ -18,6 +18,7 @@ namespace GUI.NhanVienBep
             InitializeComponent();
             LabelMove(lblOrder);
             LabelMove(lblHang);
+            LabelMove(lblLsuNhap);
         }
 
         private void LabelMove(Control c)
@@ -39,19 +40,6 @@ namespace GUI.NhanVienBep
                 ucHangHoa.Instance.BringToFront();
         }
 
-        //private void lblOrder_Click(object sender, EventArgs e)
-        //{
-        //    LabelMove(lblHang);
-        //    if (!pnPv.Controls.Contains(ucOrder.Instance))
-        //    {
-        //        pnPv.Controls.Add(ucOrder.Instance);
-        //        ucOrder.Instance.Dock = DockStyle.Fill;
-        //        ucOrder.Instance.BringToFront();
-        //    }
-        //    else
-        //        ucOrder.Instance.BringToFront();
-        //}
-
         private void lblThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -67,6 +55,32 @@ namespace GUI.NhanVienBep
         private void FrmNhanVienBep_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lblLsuNhap_Click(object sender, EventArgs e)
+        {
+            LabelMove(lblLsuNhap);
+            if (!pnB.Controls.Contains(ucLishSuNhap.Instance))
+            {
+                pnB.Controls.Add(ucLishSuNhap.Instance);
+                ucLishSuNhap.Instance.Dock = DockStyle.Fill;
+                ucLishSuNhap.Instance.BringToFront();
+            }
+            else
+                ucLishSuNhap.Instance.BringToFront();
+        }
+
+        private void lblOrder_Click(object sender, EventArgs e)
+        {
+            LabelMove(lblOrder);
+            if (!pnB.Controls.Contains(ucNhanOrder.Instance))
+            {
+                pnB.Controls.Add(ucNhanOrder.Instance);
+                ucNhanOrder.Instance.Dock = DockStyle.Fill;
+                ucNhanOrder.Instance.BringToFront();
+            }
+            else
+                ucNhanOrder.Instance.BringToFront();
         }
     }
 }

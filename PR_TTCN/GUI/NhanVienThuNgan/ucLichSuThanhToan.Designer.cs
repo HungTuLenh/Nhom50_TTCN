@@ -36,7 +36,6 @@
             this.tpBd = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnThongke = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTongdthu = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -83,6 +82,7 @@
             this.tpKt.Size = new System.Drawing.Size(159, 22);
             this.tpKt.TabIndex = 21;
             this.tpKt.Value = new System.DateTime(2024, 5, 26, 22, 11, 0, 0);
+            this.tpKt.ValueChanged += new System.EventHandler(this.tpKt_ValueChanged);
             // 
             // tpBd
             // 
@@ -95,6 +95,7 @@
             this.tpBd.Size = new System.Drawing.Size(159, 22);
             this.tpBd.TabIndex = 22;
             this.tpBd.Value = new System.DateTime(2024, 5, 25, 19, 10, 0, 0);
+            this.tpBd.ValueChanged += new System.EventHandler(this.tpBd_ValueChanged);
             // 
             // label1
             // 
@@ -115,17 +116,6 @@
             this.label2.Size = new System.Drawing.Size(31, 16);
             this.label2.TabIndex = 24;
             this.label2.Text = "Đến";
-            // 
-            // btnThongke
-            // 
-            this.btnThongke.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongke.Location = new System.Drawing.Point(763, 175);
-            this.btnThongke.Name = "btnThongke";
-            this.btnThongke.Size = new System.Drawing.Size(90, 34);
-            this.btnThongke.TabIndex = 25;
-            this.btnThongke.Text = "Thống kê";
-            this.btnThongke.UseVisualStyleBackColor = true;
-            this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click);
             // 
             // label3
             // 
@@ -154,7 +144,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtTongdthu);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnThongke);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tpBd);
@@ -177,7 +166,6 @@
         private System.Windows.Forms.DateTimePicker tpBd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnThongke;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTongdthu;
     }
